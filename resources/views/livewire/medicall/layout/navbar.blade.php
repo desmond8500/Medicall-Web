@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     @foreach ($menus as $menu)
-                    <li class="nav-item {{  (request()->is("vacation/$menu->route")) ? 'active' : ''}}"><a
+                    <li class="nav-item {{  (request()->is("$menu->route")) ? 'active' : ''}}"><a
                         href="{{ route($menu->route) }}" class="nav-link">{{ $menu->name }}</a></li>
                     @endforeach
                     {{-- @auth

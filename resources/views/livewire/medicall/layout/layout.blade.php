@@ -30,11 +30,10 @@
 
     @include('0 vacation.index.wrap')
     @livewire('medicall.layout.navbar')
-    @yield('nav2')
 
     @yield('content')
 
-    @include('0 vacation.index.footer')
+
 
     <div id="ftco-loader" class="show fullscreen">
         <svg class="circular" width="48px" height="48px">
