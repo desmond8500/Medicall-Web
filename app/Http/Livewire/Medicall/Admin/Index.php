@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Medicall\Admin;
 
 use App\Models\Newsletter;
+use App\Models\Rv;
 use Livewire\Component;
 
 class Index extends Component
@@ -11,6 +12,9 @@ class Index extends Component
     {
         return view('livewire.medicall.admin.index',[
             'news' => Newsletter::all(),
+            'rvs' => Rv::all(),
         ])->extends('livewire.medicall.layout.layout')->section('content');
     }
+
+
 }
