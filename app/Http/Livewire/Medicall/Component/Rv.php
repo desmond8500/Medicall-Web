@@ -11,7 +11,7 @@ class Rv extends Component
     {
         return view('livewire.medicall.component.rv');
     }
-    public $name = "hello", $email, $tel, $needs = 1, $description, $status;
+    public $name, $email, $tel, $needs = 1, $description, $status;
 
     // protected $rules = [
     //     'name' => 'required',
