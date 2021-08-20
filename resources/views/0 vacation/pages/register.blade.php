@@ -60,7 +60,7 @@
                                 </div>
                                 <button class="btn btn-primary ">Valider</button>
                                 <hr>
-                                <a href="{{ route('v-login')}} ">Déja incrit</a>
+                                <a href="{{ route('login')}} ">Déja incrit</a>
                             </form>
                         </div>
                     </div>

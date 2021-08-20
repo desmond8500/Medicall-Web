@@ -33,6 +33,43 @@
 
     @yield('content')
 
+    <div class="modal modal-blur fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Titre Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="form-group col-md-8">
+                            <label class="form-label">Nom du client </label>
+                            <input type="text" wire:model.defer="name" class="form-control" placeholder="Nom">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Select</label>
+                                    <select wire:model="{2:select}" class="form-control">
+                                        {{-- @foreach (tabler->getGameGenre() as genre) --}}
+                                            <option>hh</option>
+                                        {{-- @endforeach --}}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="form-label">Description</label>
+                            <textarea wire:model.defer="description" data-bs-toggle="autosize" placeholder="Description" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn me-auto" data-bs-dismiss="modal">Fermer</button>
+                        <button wire:click="store" class="btn btn-primary" data-bs-dismiss="modal">Ajouter le client</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
     <div id="ftco-loader" class="show fullscreen">
@@ -42,7 +79,7 @@
                 stroke="#F96D00" />
         </svg>
     </div>
-
+@livewireScripts
     <script src="{{ asset('vacationrental/js/jquery.min.js')}}"></script>
     <script src="{{ asset('vacationrental/js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{ asset('vacationrental/js/popper.min.js')}}"></script>
@@ -56,9 +93,9 @@
     <script src="{{ asset('vacationrental/js/owl.carousel.min.js')}}"></script>
     <script src="{{ asset('vacationrental/js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{ asset('vacationrental/js/scrollax.min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{ asset('vacationrental/js/google-map.js')}}"></script>
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> --}}
+    {{-- <script src="{{ asset('vacationrental/js/google-map.js')}}"></script> --}}
     <script src="{{ asset('vacationrental/js/main.js')}}"></script>
-    @livewireScripts
+
 </body>
 </html>

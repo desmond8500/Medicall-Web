@@ -14,9 +14,9 @@
                     <li class="nav-item {{  (request()->is("$menu->route")) ? 'active' : ''}}"><a
                         href="{{ route($menu->route) }}" class="nav-link">{{ $menu->name }}</a></li>
                     @endforeach
-                    {{-- @auth
+                    @auth
                     <li class="nav-item">
-                        <a href="{!! route('v-logout') !!}" class="nav-link">
+                        <a href="{!! route('logout') !!}" class="nav-link">
                             <i class="fa fa-sign-out"></i> Déconnexion
                         </a>
                     </li>
@@ -24,11 +24,11 @@
 
                     @guest
                     <li class="nav-item">
-                        <a href="{{ route('v-login') }}" class="nav-link">
+                        <a href="{{ route('login') }}" class="nav-link">
                             <i class="fa fa-sign-in"></i> Connexion
                         </a>
                     </li>
-                    @endguest --}}
+                    @endguest
                 </ul>
             </div>
         </div>

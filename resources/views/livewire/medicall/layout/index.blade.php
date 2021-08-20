@@ -16,5 +16,6 @@
 
         {{-- @include('0 vacation.index.footer') --}}
         @livewire('medicall.layout.footer')
+
     @endsection
 </div>

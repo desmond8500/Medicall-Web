@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Medicall\Layout;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Navbar extends Component
@@ -19,4 +20,6 @@ class Navbar extends Component
             (Object) array("name"=> "Admin", "route"=>"admin.index"),
         );
     }
+
+
 }
