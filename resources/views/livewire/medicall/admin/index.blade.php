@@ -11,6 +11,10 @@
                         <div>Newsletter :</div>
                         <div class="float-right">{{ $news }}</div>
                     </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>Utilisateur :</div>
+                        <div class="float-right">{{ $users }}</div>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -14,11 +14,19 @@ class Login extends Component
 
     public $email, $password;
 
+    // protected $rules = [
+    //     'email' => 'required',
+    //     'password' => 'required'
+    // ];
+
     public function login()
     {
-        $login = Auth::attempt(['email' => $this->email, 'password' => $this->password]);
-        if ($login) {
-            dd($login);
-        }
+        $this->validate();
+        // dump('sfsd');
+
+        //$login = Auth::attempt(['email' => $this->email, 'password' => $this->password]);
+        // if ($login) {
+        //     dd($login);
+        // }
     }
 }

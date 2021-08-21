@@ -19,6 +19,7 @@ class AdminNav extends Component
             // (Object) array('name'=> 'Medicall', 'route'=> 'index'),
             (Object) array('name'=> 'Newsletter', 'route'=> 'admin.newsletter'),
             (Object) array('name'=> 'Rendez-vous', 'route'=> 'admin.rv'),
+            (Object) array('name'=> 'Utilisateurs', 'route'=> 'admin.users'),
         );
     }
 }

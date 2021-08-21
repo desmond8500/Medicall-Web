@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Medicall\Pages;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class Register extends Component
@@ -15,26 +16,48 @@ class Register extends Component
     public $data = 'hello';
 
     public $prenom, $nom, $tel, $email, $pass1, $pass2;
+    public $pass_message = 0;
 
-    // protected $rules = [
-    //     'prenom' => 'required',
-    //     'nom' => 'required',
-    //     'tel' => 'required',
-    //     'email' => 'required',
-    //     'password' => 'required',
-    // ];
+    protected $rules = [
+        'prenom' => 'required',
+        'nom' => 'required',
+        'tel' => 'required',
+        'email' => 'required',
+        'pass1' => 'required',
+    ];
 
-    public function registering()
+    protected $messages = [
+        'prenom.required' => 'Ce champ est requis',
+        'nom.required' => 'Ce champ est requis',
+        'tel.required' => 'Ce champ est requis',
+        'tel.tel' => 'Ce champ est requis',
+        'email.required' => 'Ce champ est requis',
+        'email.email' => 'Le format du mail n\'est pas valide',
+        'pass1.required' => 'Ce champ est requis',
+    ];
+
+
+
+    public function register()
     {
-        // $this->validate();
-        dd('hello');
+        $this->validate();
 
-        User::create([
-            'prenom' => $this->prenom,
-            'nom' => $this->nom,
-            'tel' => $this->tel,
-            'email' => $this->email,
-            'password' => $this->password,
-        ]);
+        if ($this->pass1 == $this->pass2) {
+            User::create([
+                'prenom' => $this->prenom,
+                'nom' => $this->nom,
+                'tel' => $this->tel,
+                'email' => $this->email,
+                'password' => Hash::make($this->pass1),
+            ]);
+        } else {
+            $this->pass_message = "Les mots de passe ne correspondent pas";
+        }
+
+        session()->flash('message', 'Votre compte a été créé');
+
+        $this->reset('prenom', 'nom', 'tel', 'email', 'pass1');
+
+        return redirect()->route('login');
     }
 }
