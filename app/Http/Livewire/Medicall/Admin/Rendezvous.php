@@ -13,4 +13,32 @@ class Rendezvous extends Component
             'rvs' => Rv::all(),
         ])->extends('0 bootstrap5.layout.layout')->section('content');
     }
+
+    public $rv_id=0, $status;
+
+    public function edit_status($id)
+    {
+        $this->rv_id = $id;
+        $rv = Rv::find($id);
+        $this->status = $rv->status;
+    }
+
+    public function update()
+    {
+        $rv = Rv::find($this->rv_id);
+        $rv->status = $this->status;
+
+        $rv->save();
+
+        $this->reset('rv_id');
+    }
+    public function delete(){
+        $rv = Rv::find($this->rv_id);
+        $rv->delete();
+    }
+
+    public function test($item)
+    {
+        return 'hello';
+    }
 }

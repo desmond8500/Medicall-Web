@@ -23,4 +23,14 @@ class MedicallController extends Controller
             return 'Client';
         }
     }
+    public static function get_status($status)
+    {
+        if ($status == 'taken') {
+            return 'En cours';
+        } elseif ($status == 'closed') {
+            return 'Terminé';
+        } else {
+            return 'Nouveau';
+        }
+    }
 }
