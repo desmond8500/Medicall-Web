@@ -19,8 +19,10 @@ class Navbar extends Component
 
     public function get_menus(){
         return (Object) array(
-            (Object) array("name"=> "Accueil", "route"=>"index"),
-            (Object) array("name"=> "Admin", "route"=>"admin.index"),
+            // (Object) array("name"=> "Accueil", "route"=>"index", "role" => null),
+            (Object) array("name"=> "Admin", "route"=>"admin.index", "role"=> 'admin'),
+            (Object) array("name"=> "Tableau de bord", "route"=>"medic.index", "role"=> 'medic'),
+            (Object) array("name"=> "Tableau de bord", "route"=>"user.index", "role"=> 'user'),
         );
     }
 
