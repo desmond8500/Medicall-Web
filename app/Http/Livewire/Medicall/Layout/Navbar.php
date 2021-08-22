@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Medicall\Layout;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class Navbar extends Component
@@ -10,7 +12,8 @@ class Navbar extends Component
     public function render()
     {
         return view('livewire.medicall.layout.navbar',[
-            'menus' => $this->get_menus()
+            'menus' => $this->get_menus(),
+            'users' => User::count(),
         ]);
     }
 
@@ -19,6 +22,35 @@ class Navbar extends Component
             (Object) array("name"=> "Accueil", "route"=>"index"),
             (Object) array("name"=> "Admin", "route"=>"admin.index"),
         );
+    }
+
+    public function init(){
+        if (!User::count()) {
+            User::create([
+                'prenom' => 'admin',
+                'nom' => 'admin',
+                'tel' => '0000',
+                'role' => 'admin',
+                'email' => 'admin@medicall.com',
+                'password' => Hash::make('passer'),
+            ]);
+            User::create([
+                'prenom' => 'medic',
+                'nom' => 'medic',
+                'tel' => '1111',
+                'role' => 'medic',
+                'email' => 'medic@medicall.com',
+                'password' => Hash::make('passer'),
+            ]);
+            User::create([
+                'prenom' => 'user',
+                'nom' => 'user',
+                'tel' => '3333',
+                'role' => 'user',
+                'email' => 'user@medicall.com',
+                'password' => Hash::make('passer'),
+            ]);
+        }
     }
 
 

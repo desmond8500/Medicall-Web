@@ -14,19 +14,37 @@ class Login extends Component
 
     public $email, $password;
 
-    // protected $rules = [
-    //     'email' => 'required',
-    //     'password' => 'required'
-    // ];
+    protected $rules = [
+        'email' => 'required',
+        'password' => 'required'
+    ];
+
+    protected $messages = [
+        'email.required' => "Ce champ est requis",
+        'email.email' => "Le format du mail n'est pas respecté",
+        'password.required' => "Ce champ est requis",
+    ];
 
     public function login()
     {
         $this->validate();
-        // dump('sfsd');
 
-        //$login = Auth::attempt(['email' => $this->email, 'password' => $this->password]);
-        // if ($login) {
-        //     dd($login);
-        // }
+        $login = Auth::attempt(['email' => $this->email, 'password' => $this->password]);
+        if ($login) {
+            $user = Auth::user();
+            if ($user->role == "user") {
+                return redirect()->route('user.index');
+            } else if ($user->role == "medic") {
+                return redirect()->route('medic.index');
+            } else if ($user->role == "admin") {
+                return redirect()->route('admin.index');
+            }
+        }
+    }
+
+    public function autologin($role)
+    {
+        $this->email = "$role@medicall.com";
+        $this->password = "passer";
     }
 }

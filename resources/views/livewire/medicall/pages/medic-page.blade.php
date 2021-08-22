@@ -1,0 +1,3 @@
+<div>
+    Medic section
+</div>
