@@ -5,16 +5,19 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <input type="text" wire:model="name" class="form-control" placeholder="Nom" required>
+                     @error('name') <span class="error text-danger">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <input type="email" wire:model="email" class="form-control" placeholder="Email" required>
+                     @error('email') <span class="error text-danger">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="tel" wire:model="tel" class="form-control" placeholder="Téléphone" required>
+                     @error('tel') <span class="error text-danger">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="col-md-6">
@@ -37,12 +40,20 @@
                 <div class="form-group">
                     <textarea wire:model="description" class="form-control" placeholder="Description du besoin" cols="10"
                         rows="4" required></textarea>
+                        @error('description') <span class="error text-danger">{{ $message }}</span> @enderror
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary py-3 px-4">Envoyer</button>
                 </div>
+            </div>
+            <div class="col-md-12">
+                @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
             </div>
         </div>
     </form>

@@ -4,15 +4,15 @@
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-between">
-                        <div>Rendez-vous :</div>
+                        <a class="text-success" href="{{ route('admin.rv') }}">Rendez-vous :</a>
                         <div class="float-right">{{ $rvs }}</div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
-                        <div>Newsletter :</div>
+                        <a class="text-success" href="{{ route('admin.newsletter') }}">Newsletter :</a>
                         <div class="float-right">{{ $news }}</div>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
-                        <div>Utilisateur :</div>
+                        <a class="text-success" href="{{ route('admin.users') }}">Utilisateur :</a>
                         <div class="float-right">{{ $users }}</div>
                     </li>
                 </ul>

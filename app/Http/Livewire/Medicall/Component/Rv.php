@@ -15,7 +15,18 @@ class Rv extends Component
 
     // protected $rules = [
     //     'name' => 'required',
-    //     'email' => 'email',
+    //     'email' => 'required',
+    //     'tel' => 'required',
+    //     'description' => 'required',
+    //     'description' => 'required',
+    // ];
+
+    // protected $messages = [
+    //     'name.required' => 'Ce champ est requis',
+    //     'email.required' => 'Ce champ est requis',
+    //     'email.email' => 'Le format du mail est incorrect',
+    //     'tel.required' => 'Ce champ est requis',
+    //     'description.required' => 'Ce champ est requis',
     // ];
 
     public function rendez_vous()
@@ -32,5 +43,7 @@ class Rv extends Component
         ]);
 
         $this->reset('name', 'email', 'tel', 'needs', 'description', 'status');
+
+        session()->flash('message', 'Votre demande de rendez vous a été enregistrée.');
     }
 }
