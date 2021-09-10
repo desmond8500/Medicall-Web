@@ -15,7 +15,7 @@ class Index extends Component
             'news' => Newsletter::count(),
             'rvs' => Rv::count(),
             'users' => User::count(),
-        ])->extends('0 bootstrap5.layout.layout')->section('content');
+        ])->extends('0 tiny.layout')->section('content');
     }
 
 }

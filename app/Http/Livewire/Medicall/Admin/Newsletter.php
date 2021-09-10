@@ -11,6 +11,6 @@ class Newsletter extends Component
     {
         return view('livewire.medicall.admin.newsletter',[
             'news' => ModelsNewsletter::all(),
-        ])->extends('0 bootstrap5.layout.layout')->section('content');
+        ])->extends('0 tiny.layout')->section('content');
     }
 }

@@ -11,7 +11,7 @@ class Users extends Component
     {
         return view('livewire.medicall.admin.users',[
             'users' => User::all(),
-        ])->extends('0 bootstrap5.layout.layout')->section('content');
+        ])->extends('0 tiny.layout')->section('content');
     }
 
     public $user_form=0, $user_id=0;

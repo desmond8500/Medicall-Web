@@ -11,7 +11,7 @@ class Rendezvous extends Component
     {
         return view('livewire.medicall.admin.rendezvous',[
             'rvs' => Rv::all(),
-        ])->extends('0 bootstrap5.layout.layout')->section('content');
+        ])->extends('0 tiny.layout')->section('content');
     }
 
     public $rv_id=0, $status;

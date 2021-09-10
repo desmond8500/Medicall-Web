@@ -1,4 +1,7 @@
-<div class="container mt-2">
+<div>
+    @component('components.tiny.header',['title'=> 'Gestion de la newsletter'])
+
+    @endcomponent
     <div class="row">
         <div class="col-md-4">
             <div class="card">

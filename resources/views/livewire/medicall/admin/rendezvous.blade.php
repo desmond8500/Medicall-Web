@@ -1,28 +1,32 @@
 <div>
+    @component('components.tiny.header',['title'=> 'Gestion des rendez-vous'])
+
+    @endcomponent
+
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
                     <h5>Rendez-vous</h5>
                 </div>
-                <div class="card-body">
-                    <table class="table table-responsive">
+                <div class="table-responsive">
+                    <table class="table ">
                         <tr>
                             <th>Nom</th>
                             <th>Tel</th>
                             <th>Email</th>
-                            <th>Besoin</th>
+                            <th class="text-center">Besoin</th>
                             <th>Description</th>
-                            <th>Statut</th>
+                            <th class="text-center">Statut</th>
                         </tr>
                         @foreach ($rvs as $rv)
                         <tr>
                             <td>{{ $rv->name }}</td>
                             <td>{{ $rv->tel }}</td>
                             <td>{{ $rv->email }}</td>
-                            <td>{{ $rv->needs }}</td>
+                            <td class="text-center">{{ $rv->needs }}</td>
                             <td>{{ $rv->description }}</td>
-                            <td>
+                            <td class="text-center">
                                 @if ($rv->id == $rv_id)
                                     <select wire:model="status" class="form-control">
                                             <option wire:click="update" value="new">Nouveau</option>
