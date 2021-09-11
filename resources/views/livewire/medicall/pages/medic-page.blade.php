@@ -1,3 +1,5 @@
 <div>
-    Medic section
+    @component('components.tiny.header', ['title'=> 'Tableau de bord'])
+
+    @endcomponent
 </div>

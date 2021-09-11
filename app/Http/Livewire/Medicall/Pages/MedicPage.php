@@ -8,6 +8,6 @@ class MedicPage extends Component
 {
     public function render()
     {
-        return view('livewire.medicall.pages.medic-page')->extends('livewire.medicall.layout.layout')->section('content');;
+        return view('livewire.medicall.pages.medic-page')->extends('0 tiny.layout')->section('content');;
     }
 }

@@ -1,3 +1,5 @@
-<div class="container pt-2">
-    Section utilisateur
+<div>
+    @component('components.tiny.header', ['title'=> 'Tableau de bord'])
+
+    @endcomponent
 </div>

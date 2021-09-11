@@ -8,6 +8,6 @@ class UserPage extends Component
 {
     public function render()
     {
-        return view('livewire.medicall.pages.user-page')->extends('livewire.medicall.layout.layout')->section('content');;
+        return view('livewire.medicall.pages.user-page')->extends('0 tiny.layout')->section('content');
     }
 }
