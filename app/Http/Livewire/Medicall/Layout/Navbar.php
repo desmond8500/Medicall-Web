@@ -12,17 +12,23 @@ class Navbar extends Component
     public function render()
     {
         return view('livewire.medicall.layout.navbar',[
+            'log_menus' => $this->get_logged_menus(),
             'menus' => $this->get_menus(),
             'users' => User::count(),
         ]);
     }
 
-    public function get_menus(){
+    public function get_logged_menus(){
         return (Object) array(
             // (Object) array("name"=> "Accueil", "route"=>"index", "role" => null),
             (Object) array("name"=> "Admin", "route"=>"admin.index", "role"=> 'admin'),
             (Object) array("name"=> "Tableau de bord", "route"=>"medic.index", "role"=> 'medic'),
             (Object) array("name"=> "Tableau de bord", "route"=>"user.index", "role"=> 'user'),
+        );
+    }
+    public function get_menus(){
+        return (Object) array(
+            (Object) array("name"=> "Blog", "route"=>"blog.list"),
         );
     }
 

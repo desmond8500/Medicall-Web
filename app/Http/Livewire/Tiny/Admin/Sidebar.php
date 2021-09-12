@@ -53,7 +53,7 @@ class Sidebar extends Component
             (object) array('name' => 'Newsletter',      'route' => 'admin.newsletter',  'count' => Newsletter::count()),
             (object) array('name' => 'Rendez-vous',     'route' => 'admin.rv',          'count' => Rv::count()),
             (object) array('name' => 'Utilisateurs',    'route' => 'admin.users',       'count' => User::count()),
-            (object) array('name' => 'Blog',            'route' => 'medicall.blog',     'count' => ''),
+            (object) array('name' => 'Blog',            'route' => 'canvas',            'count' => ''),
         );
     }
 }

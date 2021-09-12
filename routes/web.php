@@ -6,6 +6,8 @@ use App\Http\Livewire\Medicall\Admin\Newsletter;
 use App\Http\Livewire\Medicall\Admin\Rendezvous;
 use App\Http\Livewire\Medicall\Admin\Users;
 use App\Http\Livewire\Medicall\Layout\Index;
+use App\Http\Livewire\Medicall\Pages\Blog;
+use App\Http\Livewire\Medicall\Pages\Blogs;
 use App\Http\Livewire\Medicall\Pages\Login;
 use App\Http\Livewire\Medicall\Pages\MedicPage;
 use App\Http\Livewire\Medicall\Pages\Register;
@@ -25,7 +27,9 @@ Route::get('/logout',   [MedicallController::class, 'logout'])->name('logout');
 
 // Common
 Route::get('/user/profile',   Profile::class)->name('user.profile');
-Route::get('/canvas', function () { })->name('medicall.blog');
+Route::get('/medicall/blog/list',  Blogs::class)->name('blog.list');
+Route::get('/medicall/blog/article/{article_id?}',  Blog::class)->name('blog.article');
+Route::get('/canvas', function () { })->name('canvas');
 
 // User
 Route::get('/user/index',       UserPage::class)->name('user.index');
