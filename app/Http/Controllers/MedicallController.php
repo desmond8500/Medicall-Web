@@ -33,4 +33,6 @@ class MedicallController extends Controller
             return 'Nouveau';
         }
     }
+
+
 }
