@@ -8,15 +8,18 @@
                     <h3 class="ml-3">{{ $post->title }}</h3>
                     <div class="card">
                         <div class="card-body">
-                            <img src="{{ $post->featured_image }}" alt="{{ $post->featured_image }}" height="150px"
-                                class="rounded mx-auto d-block mb-4">
-                            {!! $post->body !!}
+                            <img src="{{ $post->featured_image }}" alt="{{ $post->featured_image }}" height="150px" class="rounded mx-auto d-block mb-4 img-fluid">
+                            <div class="img-fluid">
+                                {!! $post->body !!}
+                                {{-- {{ $post->body }} --}}
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     @include('0 vacation.component.categorie')
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
