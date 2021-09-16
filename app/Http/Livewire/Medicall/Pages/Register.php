@@ -36,8 +36,6 @@ class Register extends Component
         'pass1.required' => 'Ce champ est requis',
     ];
 
-
-
     public function register()
     {
         $this->validate();

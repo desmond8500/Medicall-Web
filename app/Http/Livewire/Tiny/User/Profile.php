@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Tiny\User;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -43,15 +44,6 @@ class Profile extends Component
         $this->description  = $user->description;
     }
     public $edit_pass = 0, $pass;
-    public function edit_password()
-    {
-        $this->edit_pass = 1;
-        $this->info_form = 0;
-        $user = Auth::user();
-
-        $this->pass   = $user->password;
-    }
-
 
     public function update()
     {
@@ -93,4 +85,29 @@ class Profile extends Component
     // Mot de passe
 
     public $pass1, $pass2, $pass3;
+
+    public function edit_password()
+    {
+        $this->edit_pass = 1;
+        $this->info_form = 0;
+        $user = Auth::user();
+
+        $this->pass   = $user->password;
+    }
+    public function update_password()
+    {
+        $user = Auth::user();
+
+        if ($this->pass2 == $this->pass3) {
+            $user->password = Hash::make($this->pass2);
+            $user->save();
+            session()->flash('pass1', 'Le mot de passe a été modifié');
+        }else {
+            session()->flash('pass2', 'Les mots de passe ne correspondent pas');
+        }
+    }
+
+    // Profile Tab
+
+    public $tab = 0;
 }
