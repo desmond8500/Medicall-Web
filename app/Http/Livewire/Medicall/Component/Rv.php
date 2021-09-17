@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Medicall\Component;
 
+use App\Models\MedicFonction;
 use App\Models\Rv as ModelsRv;
 use Livewire\Component;
 
@@ -9,7 +10,9 @@ class Rv extends Component
 {
     public function render()
     {
-        return view('livewire.medicall.component.rv');
+        return view('livewire.medicall.component.rv',[
+            'functions' => MedicFonction::all(),
+        ]);
     }
     public $name, $email, $tel, $needs = 1, $description, $status;
 

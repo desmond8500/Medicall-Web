@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Medicall\Layout;
 
+use App\Models\MedicFonction;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -58,6 +59,10 @@ class Navbar extends Component
                 'email' => 'user@medicall.com',
                 'password' => Hash::make('passer'),
             ]);
+
+            MedicFonction::create([ 'name' => 'Infirmier' ]);
+            MedicFonction::create([ 'name' => 'Sage-Femme' ]);
+            MedicFonction::create([ 'name' => 'Kinésithérapeute' ]);
         }
     }
 
