@@ -1,5 +1,5 @@
 <div>
-    @component('components.tiny.header',['title'=> 'Gestion des Rendez-vous'])
+    @component('components.tiny.header',['title'=> 'Demandes de rendez-vous'])
 
     @endcomponent
 
@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Rendez-vous</h5>
+                    <h5 class="card-title">Demandes de rendez-vous</h5>
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <tr>

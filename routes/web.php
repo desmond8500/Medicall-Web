@@ -25,25 +25,28 @@ Route::get('/login',    Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
 Route::get('/logout',   [MedicallController::class, 'logout'])->name('logout');
 
-// Common
-Route::get('/user/profile',   Profile::class)->name('user.profile');
-Route::get('/medicall/blog/list',  Blogs::class)->name('blog.list');
-Route::get('/medicall/blog/article/{article_id?}',  Blog::class)->name('blog.article');
-Route::get('/canvas', function () { })->name('canvas');
+Route::middleware(['auth'])->group(function () {
+    // Common
+    Route::get('/user/profile',   Profile::class)->name('user.profile');
+    Route::get('/medicall/blog/list',  Blogs::class)->name('blog.list');
+    Route::get('/medicall/blog/article/{article_id?}',  Blog::class)->name('blog.article');
+    Route::get('/canvas', function () { })->name('canvas');
 
-// User
-Route::get('/user/index',       UserPage::class)->name('user.index');
-Route::get('/user/dossier',     Dossier::class)->name('user.dossier');
-Route::get('/user/rv',          UserRendezvous::class)->name('user.rv');
-Route::get('/user/traitement',  Traitement::class)->name('user.traitement');
-// Medic
-Route::get('/medic/index',      MedicPage::class)->name('medic.index');
+    // User
+    Route::get('/user/index',       UserPage::class)->name('user.index');
+    Route::get('/user/dossier',     Dossier::class)->name('user.dossier');
+    Route::get('/user/rv',          UserRendezvous::class)->name('user.rv');
+    Route::get('/user/traitement',  Traitement::class)->name('user.traitement');
+    // Medic
+    Route::get('/medic/index',      MedicPage::class)->name('medic.index');
 
-// Admin
-Route::get('/admin/index',      AdminIndex::class)->name('admin.index');
-Route::get('/admin/newsletter', Newsletter::class)->name('admin.newsletter');
-Route::get('/admin/rendezvous', Rendezvous::class)->name('admin.rv');
-Route::get('/admin/users',      Users::class)->name('admin.users');
+    // Admin
+    Route::get('/admin/index',      AdminIndex::class)->name('admin.index');
+    Route::get('/admin/newsletter', Newsletter::class)->name('admin.newsletter');
+    Route::get('/admin/rendezvous', Rendezvous::class)->name('admin.rv');
+    Route::get('/admin/users',      Users::class)->name('admin.users');
+
+});
 
 Route::prefix('canvas-ui')->group(function () {
     Route::prefix('api')->group(function () {

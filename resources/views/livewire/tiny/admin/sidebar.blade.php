@@ -37,30 +37,17 @@
                             <a class="nav-link pl-3" href="./ui-typograpy.html"><span
                                     class="ml-1 item-text">Typograpy</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./ui-icons.html"><span class="ml-1 item-text">Icons</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./ui-buttons.html"><span
-                                    class="ml-1 item-text">Buttons</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./ui-notification.html"><span
-                                    class="ml-1 item-text">Notifications</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./ui-modals.html"><span class="ml-1 item-text">Modals</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./ui-tabs-accordion.html"><span class="ml-1 item-text">Tabs &
-                                    Accordion</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="./ui-progress.html"><span
-                                    class="ml-1 item-text">Progress</span></a>
-                        </li>
+
                     </ul>
                 </li> --}}
+
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="{{ route('index') }}">
+                        <i class="fe fe-layers fe-16"></i>
+                        <span class="ml-3 item-text">Acceuil</span>
+                        <span class="float-right"> </span>
+                    </a>
+                </li>
                 @foreach ($menus as $menu)
                     <li class="nav-item w-100">
                         <a class="nav-link" href="{{ route($menu->route) }}">
@@ -69,7 +56,6 @@
                             <span class="float-right">{{ $menu->count }}</span>
                         </a>
                     </li>
-
                 @endforeach
             </ul>
         </nav>

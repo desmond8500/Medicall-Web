@@ -41,12 +41,22 @@ class Register extends Component
         $this->validate();
 
         if ($this->pass1 == $this->pass2) {
-            User::create([
+            $user = User::create([
                 'prenom' => $this->prenom,
                 'nom' => $this->nom,
                 'tel' => $this->tel,
                 'email' => $this->email,
                 'password' => Hash::make($this->pass1),
+            ]);
+
+            \Canvas\Models\User::create([
+                'id' => $user->id,
+                'name' => $user->nom,
+                'email' => $user->email,
+                'username' => $user->prenom,
+                'password' => $user->password,
+                'role' => '3',
+                'locale' => 'fr',
             ]);
         } else {
             $this->pass_message = "Les mots de passe ne correspondent pas";

@@ -50,4 +50,20 @@ class Users extends Component
         $user->save();
         $this->reset('user_id');
     }
+
+    // Blog
+    public function blog($user_id)
+    {
+        $user = User::find($user_id);
+
+        \Canvas\Models\User::create([
+            'id' => $user->id,
+            'name' => $user->nom,
+            'email' => $user->email,
+            'username' => $user->prenom,
+            'password' => $user->password,
+            'role' => '1',
+            'locale' => 'fr',
+        ]);
+    }
 }
