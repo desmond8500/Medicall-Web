@@ -6,7 +6,7 @@
             <h2 class="subheading">Bienvenue sur Medicall</h2>
             <h1 class="mb-4">Des soins médicaux de qualité chez vous en un click</h1>
             <p>
-                <a href="{{route('index')}}" class="btn btn-primary" data-toggle="modal" data-target="#postuler">Rejoignez-nous</a>
+                <a href="{{route('register')}}" class="btn btn-primary">Rejoignez-nous</a>
                 <a href="{{route('index')}}" class="btn btn-white">Contactez-Nous</a></p>
             </div>
         </div>

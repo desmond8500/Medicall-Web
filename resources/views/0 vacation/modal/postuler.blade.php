@@ -15,7 +15,7 @@
         </p>
     </div>
     <div class="col-md-4">
-        <form wire:submit.prevent="register" method="POST" >
+        <form  method="POST" >
             @csrf
             <div class="form-group">
                 <label>Prénom</label>

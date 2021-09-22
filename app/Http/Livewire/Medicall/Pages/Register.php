@@ -15,7 +15,7 @@ class Register extends Component
 
     public $data = 'hello';
 
-    public $prenom, $nom, $tel, $email, $pass1, $pass2;
+    public $prenom, $nom, $tel, $email, $pass1, $pass2, $role = 'user';
     public $pass_message = 0;
 
     protected $rules = [
@@ -24,6 +24,7 @@ class Register extends Component
         'tel' => 'required',
         'email' => 'required',
         'pass1' => 'required',
+        'role' => 'required',
     ];
 
     protected $messages = [
@@ -46,6 +47,7 @@ class Register extends Component
                 'nom' => $this->nom,
                 'tel' => $this->tel,
                 'email' => $this->email,
+                'role' => $this->role,
                 'password' => Hash::make($this->pass1),
             ]);
 
@@ -58,14 +60,16 @@ class Register extends Component
                 'role' => '1',
                 'locale' => 'fr',
             ]);
+
+            session()->flash('message', 'Votre compte a été créé');
+
+            $this->reset('prenom', 'nom', 'tel', 'email', 'pass1');
+
+            return redirect()->route('login');
         } else {
             $this->pass_message = "Les mots de passe ne correspondent pas";
         }
 
-        session()->flash('message', 'Votre compte a été créé');
 
-        $this->reset('prenom', 'nom', 'tel', 'email', 'pass1');
-
-        return redirect()->route('login');
     }
 }

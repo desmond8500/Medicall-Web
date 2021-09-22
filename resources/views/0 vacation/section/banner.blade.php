@@ -9,11 +9,9 @@
                 </h3>
                 <p class="mb-0">
                     {{-- <a  class="btn btn-primary">Postulez-maintenant</a> --}}
-                    @include('0 vacation.modal.button', ['title'=>'Postulez-mantenant', 'id'=>'postuler'])
+                    {{-- @include('0 vacation.modal.button', ['title'=>'Postulez-mantenant', 'id'=>'postuler']) --}}
 
-                    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$id}}">
-                        {{ $title ?? "Plus d'informations" }}
-                    </button> --}}
+                    <a class="btn btn-primary" href="{{ route('register') }}" class="btn btn-primary">Rejoignez-nous</a>
 
                     <a href="{{route('index')}}" class="btn btn-white">Contactez-Nous</a>
 

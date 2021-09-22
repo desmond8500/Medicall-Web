@@ -1,4 +1,7 @@
 <div class="row">
+    <div class="col-md-4 offset-4 mt-4">
+        <h3 class="text-center">Connexion</h3>
+    </div>
     <div class="col-md-4 offset-md-4 mt-3">
         <form wire:submit.prevent='login'>
             <div class="form-group">
@@ -21,10 +24,10 @@
     <div class="col-md-6 offset-md-3 mt-5 text-center">
         Vous pouvez vous connecter aux comptes tests en cliquant sur un de ces roles. <br>
         Validez pour vous connecter.
-        <div class="mt-3 d-flex justify-content-between">
+        {{-- <div class="mt-3 d-flex justify-content-between">
             <button wire:click="autologin('user')" class="btn btn-primary">Utilisateur</button>
             <button wire:click="autologin('medic')" class="btn btn-success">Personnel medical</button>
             <button wire:click="autologin('admin')" class="btn btn-danger">Administrateur</button>
-        </div>
+        </div> --}}
     </div>
 </div>
