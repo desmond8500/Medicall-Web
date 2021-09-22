@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire\Medicall\Component;
 
+use Livewire\Component;
 use App\Models\MedicFonction;
 use App\Models\Rv as ModelsRv;
-use Livewire\Component;
 
 class Rv extends Component
 {

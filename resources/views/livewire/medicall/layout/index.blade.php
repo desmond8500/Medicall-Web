@@ -12,9 +12,9 @@
         {{-- @foreach ($services as $service) --}}
         {{-- @include('0 vacation.modal.modal',['title'=>$service->title, 'id'=>$service->id,'content'=>$service->content]) --}}
         {{-- @endforeach --}}
+        @livewire('medicall.component.postuler')
         {{-- @include('0 vacation.modal.modal-lg',['title'=>'Postuer', 'id'=>'postuler','content'=>'0 vacation.modal.postuler']) --}}
 
-        {{-- @include('0 vacation.index.footer') --}}
         @livewire('medicall.layout.footer')
 
     @endsection

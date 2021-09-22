@@ -55,7 +55,7 @@ class Register extends Component
                 'email' => $user->email,
                 'username' => $user->prenom,
                 'password' => $user->password,
-                'role' => '3',
+                'role' => '1',
                 'locale' => 'fr',
             ]);
         } else {

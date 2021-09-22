@@ -15,25 +15,45 @@
         </p>
     </div>
     <div class="col-md-4">
-        <form action="{{url('inscriptions')}} " method="post">
+        <form wire:submit.prevent="register" method="POST" >
             @csrf
+            <div class="form-group">
+                <label>Prénom</label>
+                <input type="text" class="form-control" wire:model.defer="prenom">
+                @error('prenom') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+                <label>Nom</label>
+                <input type="text" class="form-control" wire:model.defer="nom">
+                @error('nom') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+                <label>Téléphone</label>
+                <input type="text" class="form-control" wire:model.defer="tel">
+                @error('tel') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" wire:model.defer="email">
+                @error('email') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" class="form-control" wire:model.defer="pass1">
+                @error('pass1') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
+                <label>Confirmer le mot de passe</label>
+                <input type="password" class="form-control" wire:model.defer="pass2">
+                @error('pass2') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            @if ($pass_message)
+                <div class="col-md-12 text-danger text-center">
+                    {{ $pass_message }}
+                </div>
+            @endif
 
-            <div class="form-group">
-                <label for="">Nom</label>
-                <input type="text" name="nom" class="form-control" placeholder="Prénom et nom">
-            </div>
-            <div class="form-group">
-                <label for="">Téléphone</label>
-                <input type="text" name="tel" class="form-control" placeholder="Numéro de téléphone">
-            </div>
-            <div class="form-group">
-                <label for="">CV</label>
-                <input type="file" name="cv" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="">Résumé</label>
-                <textarea name="resume" cols="30" rows="10" class="form-control" placeholder="Présentez-vous, dites nous vos attentes ..."></textarea>
-            </div>
+
 
             <button type="submit" class="btn btn-primary">Envoyer</button>
 

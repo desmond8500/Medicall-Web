@@ -3,13 +3,21 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-9 text-center">
-                <h2>Rejoignez-nous</h2>
-                <p class="mb-4">Si vous êtes infirmier, sage-femme ou kinésithérapeute vous pouvez rejoindre notre équipe où que vou soyez dan le Sénégal</p>
+                <h2 class="bg-info rounded">Rejoignez-nous</h2>
+                <h3 class="mb-4 text-light bg-info p-2">
+                    Si vous êtes infirmier, sage-femme ou kinésithérapeute vous pouvez rejoindre notre équipe où que vou soyez dan le Sénégal
+                </h3>
                 <p class="mb-0">
-                    {{-- <a href="{{route('')}}" class="btn btn-primary px-4 py-3 mb-3">Postulez-maintenant</a>  --}}
+                    {{-- <a  class="btn btn-primary">Postulez-maintenant</a> --}}
                     @include('0 vacation.modal.button', ['title'=>'Postulez-mantenant', 'id'=>'postuler'])
 
-                    <a href="{{route('index')}}" class="btn btn-white px-4 py-3">Contactez-Nous</a>
+                    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{$id}}">
+                        {{ $title ?? "Plus d'informations" }}
+                    </button> --}}
+
+                    <a href="{{route('index')}}" class="btn btn-white">Contactez-Nous</a>
+
+
                 </p>
             </div>
         </div>
