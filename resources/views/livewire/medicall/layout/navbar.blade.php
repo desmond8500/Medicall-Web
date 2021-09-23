@@ -17,6 +17,9 @@
                     <li class="nav-item">
                         <a href="{{ route('index') }}" class="nav-link">Acceuil</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('contact') }}" class="nav-link">Contact</a>
+                    </li>
                     @auth
                         @foreach ($log_menus as $menu)
                             @if ($menu->role == Auth::user()->role)

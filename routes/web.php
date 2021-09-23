@@ -8,6 +8,7 @@ use App\Http\Livewire\Medicall\Admin\Users;
 use App\Http\Livewire\Medicall\Layout\Index;
 use App\Http\Livewire\Medicall\Pages\Blog;
 use App\Http\Livewire\Medicall\Pages\Blogs;
+use App\Http\Livewire\Medicall\Pages\Contact;
 use App\Http\Livewire\Medicall\Pages\Login;
 use App\Http\Livewire\Medicall\Pages\MedicPage;
 use App\Http\Livewire\Medicall\Pages\Register;
@@ -19,6 +20,7 @@ use App\Http\Livewire\Tiny\User\Traitement;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',         Index::class)->name('index');
+Route::get('/contact',  Contact::class)->name('contact');
 Route::get('/login',    Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
 Route::get('/logout',   [MedicallController::class, 'logout'])->name('logout');
