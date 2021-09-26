@@ -7,13 +7,18 @@
             <div class="form-group">
                 <label for="tel">Email</label>
                 <input type="email" wire:model.defer="email" class="form-control" required>
-                @error('email') <span class="error text-danger">{{ $message }}</span> @enderror
+                @error('email') <span class="error text-danger">{{ $email }}</span> @enderror
             </div>
             <div class="form-group">
                 <label>Mot de passe</label>
                 <input type="password" class="form-control" wire:model.defer="password" required>
                 @error('email') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
+            @if (session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
 
             <button class="btn btn-primary" type="submit">Valider</button>
 

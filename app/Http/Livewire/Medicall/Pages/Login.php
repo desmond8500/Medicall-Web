@@ -14,20 +14,21 @@ class Login extends Component
 
     public $email, $password;
 
-    protected $rules = [
-        'email' => 'required',
-        'password' => 'required'
-    ];
+    // protected $rules = [
+    //     'email' => 'required',
+    //     'password' => 'required'
+    // ];
 
-    protected $messages = [
-        'email.required' => "Ce champ est requis",
-        'email.email' => "Le format du mail n'est pas respecté",
-        'password.required' => "Ce champ est requis",
-    ];
+    // protected $messages = [
+    //     'email.required' => "Ce champ est requis",
+    //     'email.email' => "Le format du mail n'est pas respecté",
+    //     'password.required' => "Ce champ est requis",
+    // ];
 
     public function login()
     {
-        $this->validate();
+        // $this->validate();
+
 
         $login = Auth::attempt(['email' => $this->email, 'password' => $this->password]);
         if ($login) {
@@ -39,7 +40,10 @@ class Login extends Component
             } else if ($user->role == "admin") {
                 return redirect()->route('admin.index');
             }
+        }else {
+            session()->flash('error', 'Les identifiants saisis sont incorrects');
         }
+
     }
 
     public function autologin($role)

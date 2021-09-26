@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="{{ asset('src/images/logo/favicon.ico') }}" />
     <title>Medicall Admin</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="{{ asset('tiny/css/simplebar.css') }}">
