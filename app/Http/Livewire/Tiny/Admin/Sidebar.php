@@ -30,7 +30,7 @@ class Sidebar extends Component
     public function user_menu()
     {
         return (object) array(
-            (object) array('name' => 'Accueil',         'route' => 'user.index', 'count' => ''),
+            // (object) array('name' => 'Accueil',         'route' => 'user.index', 'count' => ''),
             (object) array('name' => 'Dossier Medical', 'route' => 'user.dossier', 'count' => ''),
             (object) array('name' => 'Rendez-vous',     'route' => 'user.rv', 'count' => ''),
             (object) array('name' => 'Traitements',     'route' => 'user.traitement', 'count' => ''),
@@ -39,7 +39,7 @@ class Sidebar extends Component
     public function medic_menu()
     {
         return (object) array(
-            (object) array('name' => 'Accueil',             'route' => 'medic.index', 'count' => ''),
+            // (object) array('name' => 'Accueil',             'route' => 'medic.index', 'count' => ''),
             (object) array('name' => 'Nouvelles demandes',  'route' => 'medic.index', 'count' => ''),
             (object) array('name' => 'Rendez-vous',         'route' => 'medic.index', 'count' => ''),
             (object) array('name' => 'Agenda',              'route' => 'medic.index', 'count' => ''),

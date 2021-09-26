@@ -24,12 +24,12 @@ Route::get('/contact',  Contact::class)->name('contact');
 Route::get('/login',    Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
 Route::get('/logout',   [MedicallController::class, 'logout'])->name('logout');
+Route::get('/medicall/blog/list',  Blogs::class)->name('blog.list');
+Route::get('/medicall/blog/article/{article_id?}',  Blog::class)->name('blog.article');
 
 Route::middleware(['auth'])->group(function () {
     // Common
     Route::get('/user/profile',   Profile::class)->name('user.profile');
-    Route::get('/medicall/blog/list',  Blogs::class)->name('blog.list');
-    Route::get('/medicall/blog/article/{article_id?}',  Blog::class)->name('blog.article');
     Route::get('/canvas', function () { })->name('canvas');
 
     // User
