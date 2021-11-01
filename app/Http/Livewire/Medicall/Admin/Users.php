@@ -11,7 +11,9 @@ class Users extends Component
     public function render()
     {
         return view('livewire.medicall.admin.users',[
-            'users' => User::all(),
+            'admins' => User::where('role','admin')->paginate(10),
+            'medics' => User::where('role', 'medic')->paginate(10),
+            'users' => User::where('role', 'user')->paginate(10),
             'fonctions' => MedicFonction::all(),
         ])->extends('0 tiny.layout')->section('content');
     }
