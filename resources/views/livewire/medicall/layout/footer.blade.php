@@ -60,17 +60,13 @@
                 </form>
                 <h2 class="footer-heading mt-5">Suivez nous</h2>
                 <ul class="ftco-footer-social p-0">
-                    <li class="ftco-animate"><a target="_blank" href="{{url('https://twitter.com/MedicallSuivi')}}"
+                    <li class="ftco-animate"><a target="_blank" href="{{url('https://twitter.com/medicallsante')}}"
                             data-toggle="tooltip" data-placement="top" title="Twitter"><span
                                 class="fa fa-twitter"></span></a></li>
                     <li class="ftco-animate"><a target="_blank"
                             href="{{url('https://web.facebook.com/Medicallsante-102779334743423/?__tn__=%2Cd%2CP-R&eid=ARBpAVhtyIzSwnSYNAtDd56LxIYkdqy599QlOkpiR9BxRevtgPdH29m_9lzgippyn-rmNbkudxeJmWCg')}}"
-                            data-toggle="tooltip" data-placement="top" title="Facebook"><span
-                                class="fa fa-facebook"></span></a></li>
-                    <li class="ftco-animate"><a target="_blank"
-                            href="{{url('https://www.linkedin.com/in/medicall-sant%C3%A9-suivi-3809021a0/')}}"
-                            data-toggle="tooltip" data-placement="top" title="Linkedin"><span
-                                class="fa fa-linkedin"></span></a></li>
+                            data-toggle="tooltip" data-placement="top" title="Facebook"><span   class="fa fa-facebook"></span></a></li>
+                    <li class="ftco-animate"><a target="_blank"  href="{{url('https://www.linkedin.com/in/medicall-sant%C3%A9-suivi-3809021a0/')}}" data-toggle="tooltip" data-placement="top" title="Linkedin"><span  class="fa fa-linkedin"></span></a></li>
                 </ul>
             </div>
         </div>
