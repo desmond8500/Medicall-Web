@@ -8,6 +8,7 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-site-verification" content="v2B98FPm23x96W_hTvgiYDuEzjaiAy_3SGGOFzMMtiw" />
     <link rel="icon" href="{{ asset('src/images/logo/favicon.ico') }}" />
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap"
