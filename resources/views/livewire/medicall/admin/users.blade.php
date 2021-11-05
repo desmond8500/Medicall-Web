@@ -4,10 +4,10 @@
     @endcomponent
     <div class="row">
         <div class="col-md-12 mb-2">
-            @include('medicall.admin.users', ['data'=>$users, 'titre'=>'Administrateurs'])
+            @include('medicall.admin.users', ['data'=>$admins, 'titre'=>'Administrateurs'])
         </div>
         <div class="col-md-12 mb-2">
-            @include('medicall.admin.users', ['data'=>$users, 'titre'=>'Personnel'])
+            @include('medicall.admin.users', ['data'=>$medics, 'titre'=>'Personnel'])
         </div>
         <div class="col-md-12 mb-2">
             @include('medicall.admin.users', ['data'=>$users, 'titre'=>'Utilisateurs'])
